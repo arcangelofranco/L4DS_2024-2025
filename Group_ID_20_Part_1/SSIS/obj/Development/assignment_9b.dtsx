@@ -1,0 +1,2038 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/15/2024 8:52:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MSI"
+  DTS:CreatorName="MSI\arcan"
+  DTS:DTSID="{1BFBD357-73BC-4233-A25C-7DA8BFAC0BDB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{E87EC2C1-3E68-4671-92C2-346C98B7C672}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{934A461E-C4A4-4604-A4F4-1E0247DBC554}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\arcan\Desktop\dss\SSIS\output_assignments\output_assignment_9b.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="beat_of_occurrence"
+              DTS:DTSID="{ACDC7AF4-528D-4DE7-8562-659707BAA2AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_num_units"
+              DTS:DTSID="{753365C2-3C30-458C-A89F-03ABC136B331}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="13"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="crash_season"
+              DTS:DTSID="{6E0CAC6B-B5B6-4A7D-97A0-C053D095823E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ECC1F2F1-E42D-433A-A362-796FA597DD8F}"
+      DTS:ObjectName="lds.di.unipi.it.Group_ID_20_DB.Group_ID_20">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=lds.di.unipi.it;User ID=Group_ID_20;Initial Catalog=Group_ID_20_DB;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{ECC1F2F1-E42D-433A-A362-796FA597DD8F}lds.di.unipi.it.Group_ID_20_DB.Group_ID_20;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdMtju0ns20icqJPW6nAnXAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACj1LxbJTQI0gNpvzi0+gZgiiK8/YCTvHDnoonD0Oq9RQAAAAAOgAAAAAIAACAAAACJs631SRK1YtAg9WZEBhL3w76pgUcCHAkrIFDVtZB0HCAAAACX0ArAWlInDudOLw12ElU7rdZrc3DTlDvAJeaxGncMWUAAAABKG6S0JzIHx0u6DBLiU7ZWZbqAXoKQdrXQ2IRjPQfx1DwCjnd0pRgCGwpamL62gjM5AHt2Iz5s6TE3SXU+9AzT</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MSI\DSS_PROJECT.dss]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{510F194D-61CB-4074-A68A-81540E8D0D54}"
+      DTS:ObjectName="MSI\DSS_PROJECT.dss">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MSI\DSS_PROJECT;Initial Catalog=dss;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{510F194D-61CB-4074-A68A-81540E8D0D54}MSI\DSS_PROJECT.dss;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\For every police beat, compute"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="For every police beat, compute the total number of vehicles involved in an incident occurring in summer or spring, and the total number of vehicles involved in an incident occurring in winter or autumn."
+      DTS:DTSID="{C816E991-E47A-4DDA-9BFF-321256FBCE97}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="For every police beat, compute">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\For every police beat, compute\number_vehicles"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Attività Flusso di dati"
+          DTS:DTSID="{340FED26-3FDB-47B8-997D-84CEF17C71E0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="number_vehicles"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\crash_season_1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+                  description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+                  name="crash_season_1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\crash_season_1.Inputs[Input colonna derivata]"
+                      description="Input della trasformazione Colonna derivata"
+                      name="Input colonna derivata">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output colonna derivata]"
+                      description="Output predefinito della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      name="Output colonna derivata"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\crash_season_1.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output colonna derivata].Columns[crash_season]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="13"
+                          lineageId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output colonna derivata].Columns[crash_season]"
+                          name="crash_season"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">"SUMMER_SPRING"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"SUMMER_SPRING"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output errori colonna derivata]"
+                      description="Output degli errori della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori colonna derivata"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\crash_season_1.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\crash_season_2"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+                  description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+                  name="crash_season_2"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\crash_season_2.Inputs[Input colonna derivata]"
+                      description="Input della trasformazione Colonna derivata"
+                      name="Input colonna derivata">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output colonna derivata]"
+                      description="Output predefinito della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      name="Output colonna derivata"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\crash_season_2.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output colonna derivata].Columns[crash_season]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="13"
+                          lineageId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output colonna derivata].Columns[crash_season]"
+                          name="crash_season"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">"WINTER_AUTUMN"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"WINTER_AUTUMN"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output errori colonna derivata]"
+                      description="Output degli errori della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori colonna derivata"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\crash_season_2.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\Damage"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+                  description="Origine OLE DB"
+                  name="Damage"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset">[Group_ID_20].[damage]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variabile che contiene il comando SQL da eseguire."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Mapping tra i parametri nel comando SQL e le variabili."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\For every police beat, compute\number_vehicles\Damage.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB]"
+                      name="Output origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[crash_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[crash_id]"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[crash_id]"
+                          name="crash_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[date_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[date_id]"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[date_id]"
+                          name="date_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[location_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[location_id]"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[location_id]"
+                          name="location_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[injury_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[injury_id]"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[injury_id]"
+                          name="injury_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[person_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[person_id]"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[person_id]"
+                          name="person_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[vehicle_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[vehicle_id]"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[vehicle_id]"
+                          name="vehicle_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[num_units]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[num_units]"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[num_units]"
+                          name="num_units"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[damage_cost]"
+                          dataType="r8"
+                          name="damage_cost" />
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[num_units]"
+                          dataType="i4"
+                          name="num_units" />
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[crash_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="crash_id" />
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[date_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="date_id" />
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[location_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="location_id" />
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[injury_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="injury_id" />
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[person_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="person_id" />
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].ExternalColumns[vehicle_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="vehicle_id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB]"
+                      isErrorOut="true"
+                      name="Output errori origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[crash_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[crash_id]"
+                          name="crash_id" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[date_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[date_id]"
+                          name="date_id" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[location_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[location_id]"
+                          name="location_id" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[injury_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[injury_id]"
+                          name="injury_id" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[person_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[person_id]"
+                          name="person_id" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[vehicle_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[vehicle_id]"
+                          name="vehicle_id" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[num_units]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output errori origine OLE DB].Columns[num_units]"
+                          name="num_units" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\Date"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+                  description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+                  name="Date"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Group_ID_20].[date]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Group_ID_20].[date]) [refTable]
+where [refTable].[date_id] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di cache della tabella di ricerca."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se fare riferimento ai metadati in un formato XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="date_id" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crash_time" dataType="DT_WSTR" length="16" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crash_period" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crash_day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crash_month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crash_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crash_day_of_week" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crash_season" dataType="DT_WSTR" length="6" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="date_police_notified" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                      name="ParameterMap">#{Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[date_id]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\For every police beat, compute\number_vehicles\Date.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\Date.Inputs[Input ricerca]"
+                      name="Input ricerca">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Date.Inputs[Input ricerca].Columns[date_id]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="date_id"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[date_id]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                              name="JoinToReferenceColumn">date_id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output corrispondenza ricerca]"
+                      errorOrTruncationOperation="Ricerca"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Output corrispondenza ricerca"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\Date.Inputs[Input ricerca]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output corrispondenza ricerca].Columns[crash_season]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copia colonna"
+                          length="6"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output corrispondenza ricerca].Columns[crash_season]"
+                          name="crash_season"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn">crash_season</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output nessuna corrispondenza ricerca]"
+                      description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                      exclusionGroup="1"
+                      name="Output nessuna corrispondenza ricerca"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\Date.Inputs[Input ricerca]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output errori ricerca]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori ricerca"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\Date.Inputs[Input ricerca]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\Location"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+                  description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+                  name="Location"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Group_ID_20].[location]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Group_ID_20].[location]) [refTable]
+where [refTable].[location_id] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di cache della tabella di ricerca."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se fare riferimento ai metadati in un formato XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="location_id" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="street_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="street_direction" dataType="DT_WSTR" length="1" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="street_name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="beat_of_occurrence" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="latitude" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="longitude" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="location_point" dataType="DT_WSTR" length="12" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                      name="ParameterMap">#{Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[location_id]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\For every police beat, compute\number_vehicles\Location.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\Location.Inputs[Input ricerca]"
+                      name="Input ricerca">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Location.Inputs[Input ricerca].Columns[location_id]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="location_id"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[location_id]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                              name="JoinToReferenceColumn">location_id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output corrispondenza ricerca]"
+                      errorOrTruncationOperation="Ricerca"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Output corrispondenza ricerca"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\Location.Inputs[Input ricerca]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output corrispondenza ricerca].Columns[beat_of_occurrence]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copia colonna"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output corrispondenza ricerca].Columns[beat_of_occurrence]"
+                          name="beat_of_occurrence"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn">beat_of_occurrence</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output nessuna corrispondenza ricerca]"
+                      description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                      exclusionGroup="1"
+                      name="Output nessuna corrispondenza ricerca"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\Location.Inputs[Input ricerca]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output errori ricerca]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori ricerca"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\Location.Inputs[Input ricerca]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\Ordinamento"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+                  description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
+                  name="Ordinamento"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se la trasformazione Ordinamento rimuove le righe con valori di ordinamento duplicati."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero massimo di thread da utilizzare per l'ordinamento."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\Ordinamento.Inputs[Input ordinamento]"
+                      name="Input ordinamento">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Ordinamento.Inputs[Input ordinamento].Columns[beat_of_occurrence]"
+                          cachedDataType="i4"
+                          cachedName="beat_of_occurrence"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[beat_of_occurrence]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di ordinamento della colonna."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Ordinamento.Inputs[Input ordinamento].Columns[total_num_units]"
+                          cachedDataType="i8"
+                          cachedName="total_num_units"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[total_num_units]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di ordinamento della colonna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Ordinamento.Inputs[Input ordinamento].Columns[crash_season]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="crash_season"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[crash_season]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di ordinamento della colonna."
+                              name="NewSortKeyPosition">2</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento]"
+                      isSorted="true"
+                      name="Output ordinamento">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento].Columns[beat_of_occurrence]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento].Columns[beat_of_occurrence]"
+                          name="beat_of_occurrence"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                              name="SortColumnId">#{Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[beat_of_occurrence]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento].Columns[total_num_units]"
+                          dataType="i8"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento].Columns[total_num_units]"
+                          name="total_num_units">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                              name="SortColumnId">#{Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[total_num_units]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento].Columns[crash_season]"
+                          dataType="wstr"
+                          length="13"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento].Columns[crash_season]"
+                          name="crash_season"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                              name="SortColumnId">#{Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[crash_season]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\output_assignment_9b"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+                  description="Destinazione file flat"
+                  localeId="1033"
+                  name="output_assignment_9b"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat]"
+                      hasSideEffects="true"
+                      name="Input destinazione file flat">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat].Columns[beat_of_occurrence]"
+                          cachedDataType="i4"
+                          cachedName="beat_of_occurrence"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat].ExternalColumns[beat_of_occurrence]"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento].Columns[beat_of_occurrence]" />
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat].Columns[total_num_units]"
+                          cachedDataType="i8"
+                          cachedName="total_num_units"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat].ExternalColumns[total_num_units]"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento].Columns[total_num_units]" />
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat].Columns[crash_season]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="crash_season"
+                          cachedSortKeyPosition="2"
+                          externalMetadataColumnId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat].ExternalColumns[crash_season]"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento].Columns[crash_season]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat].ExternalColumns[beat_of_occurrence]"
+                          dataType="i4"
+                          name="beat_of_occurrence" />
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat].ExternalColumns[total_num_units]"
+                          dataType="i8"
+                          name="total_num_units" />
+                        <externalMetadataColumn
+                          refId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat].ExternalColumns[crash_season]"
+                          dataType="wstr"
+                          length="13"
+                          name="crash_season" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Suddivisione condizionale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+                  description="Indirizza righe di dati a output diversi a seconda del contenuto dei dati. Usare le condizioni (espressioni SSIS) per specificare le righe da indirizzare. Ad esempio, separare i record da eliminare da quelli pronti per essere caricati oppure indirizzare unicamente un subset di record."
+                  name="Suddivisione condizionale"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Inputs[Input suddivisione condizionale]"
+                      description="Input della trasformazione Suddivisione condizionale"
+                      name="Input suddivisione condizionale">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Inputs[Input suddivisione condizionale].Columns[crash_season]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="crash_season"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output corrispondenza ricerca].Columns[crash_season]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Outputs[Summer_Spring]"
+                      description="Output 1 della trasformazione Suddivisione condizionale"
+                      errorOrTruncationOperation="Calcolo"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Summer_Spring"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Inputs[Input suddivisione condizionale]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifica l'espressione. Questa versione dell'espressione utilizza gli identificatori di derivazione anziché i nomi di colonna."
+                          name="Expression">#{Package\For every police beat, compute\number_vehicles\Date.Outputs[Output corrispondenza ricerca].Columns[crash_season]} == "SUMMER" || #{Package\For every police beat, compute\number_vehicles\Date.Outputs[Output corrispondenza ricerca].Columns[crash_season]} == "SPRING"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifica la versione descrittiva dell'espressione. Questa versione dell'espressione utilizza i nomi di colonna."
+                          expressionType="Notify"
+                          name="FriendlyExpression">crash_season == "SUMMER" || crash_season == "SPRING"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica la posizione della condizione nell'elenco delle condizioni valutate dalla trasformazione. L'ordine di valutazione è crescente, dal valore più basso al più alto."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Outputs[Winter_Autumn]"
+                      description="Output predefinito per la trasformazione Suddivisione condizionale"
+                      exclusionGroup="1"
+                      name="Winter_Autumn"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Inputs[Input suddivisione condizionale]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale]"
+                      description="Output degli errori per la trasformazione Suddivisione condizionale"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori suddivisione condizionale"
+                      synchronousInputId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Inputs[Input suddivisione condizionale]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\total_num_units_1"
+                  componentClassID="Microsoft.Aggregate"
+                  contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
+                  description="Aggrega i dati con funzioni quali Media, Somma, Conta numeri, Max e Min. Ad esempio, raggruppare i dati per calcolare la somma delle vendite per prodotto o la media giornaliera delle visite."
+                  name="total_num_units_1"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                      name="Keys" />
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore CountDistinctScale."
+                      name="CountDistinctScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Se si specifica un valore CountDistinctScale, il valore in CountDistinctKeys ha la precedenza."
+                      name="CountDistinctKeys" />
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la percentuale di estensione della memoria consentita durante l'aggregazione. I valori validi sono compresi tra 1 e 100."
+                      name="AutoExtendFactor">25</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Inputs[Input aggregazione 1]"
+                      name="Input aggregazione 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Inputs[Input aggregazione 1].Columns[beat_of_occurrence]"
+                          cachedDataType="i4"
+                          cachedName="beat_of_occurrence"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output corrispondenza ricerca].Columns[beat_of_occurrence]" />
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Inputs[Input aggregazione 1].Columns[num_units]"
+                          cachedDataType="i4"
+                          cachedName="num_units"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[num_units]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Outputs[Output aggregazione 1]"
+                      name="Output aggregazione 1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                          name="KeyScale"
+                          typeConverter="KeyScaleType">0</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                          name="Keys" />
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Outputs[Output aggregazione 1].Columns[beat_of_occurrence]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Outputs[Output aggregazione 1].Columns[beat_of_occurrence]"
+                          name="beat_of_occurrence">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                              name="AggregationColumnId">#{Package\For every police beat, compute\number_vehicles\Location.Outputs[Output corrispondenza ricerca].Columns[beat_of_occurrence]}</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di aggregazione."
+                              name="AggregationType"
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                              name="IsBig">1</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni per il confronto di stringhe."
+                              name="AggregationComparisonFlags">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Outputs[Output aggregazione 1].Columns[total_num_units]"
+                          dataType="i8"
+                          lineageId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Outputs[Output aggregazione 1].Columns[total_num_units]"
+                          name="total_num_units">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                              name="AggregationColumnId">#{Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[num_units]}</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di aggregazione."
+                              name="AggregationType"
+                              typeConverter="AggregationType">4</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                              name="IsBig">1</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni per il confronto di stringhe."
+                              name="AggregationComparisonFlags">0</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\total_num_units_2"
+                  componentClassID="Microsoft.Aggregate"
+                  contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
+                  description="Aggrega i dati con funzioni quali Media, Somma, Conta numeri, Max e Min. Ad esempio, raggruppare i dati per calcolare la somma delle vendite per prodotto o la media giornaliera delle visite."
+                  name="total_num_units_2"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                      name="Keys" />
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore CountDistinctScale."
+                      name="CountDistinctScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Se si specifica un valore CountDistinctScale, il valore in CountDistinctKeys ha la precedenza."
+                      name="CountDistinctKeys" />
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la percentuale di estensione della memoria consentita durante l'aggregazione. I valori validi sono compresi tra 1 e 100."
+                      name="AutoExtendFactor">25</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Inputs[Input aggregazione 1]"
+                      name="Input aggregazione 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Inputs[Input aggregazione 1].Columns[beat_of_occurrence]"
+                          cachedDataType="i4"
+                          cachedName="beat_of_occurrence"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output corrispondenza ricerca].Columns[beat_of_occurrence]" />
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Inputs[Input aggregazione 1].Columns[num_units]"
+                          cachedDataType="i4"
+                          cachedName="num_units"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[num_units]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Outputs[Output aggregazione 1]"
+                      name="Output aggregazione 1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                          name="KeyScale"
+                          typeConverter="KeyScaleType">0</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                          name="Keys" />
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Outputs[Output aggregazione 1].Columns[beat_of_occurrence]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Outputs[Output aggregazione 1].Columns[beat_of_occurrence]"
+                          name="beat_of_occurrence">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                              name="AggregationColumnId">#{Package\For every police beat, compute\number_vehicles\Location.Outputs[Output corrispondenza ricerca].Columns[beat_of_occurrence]}</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di aggregazione."
+                              name="AggregationType"
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                              name="IsBig">1</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni per il confronto di stringhe."
+                              name="AggregationComparisonFlags">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Outputs[Output aggregazione 1].Columns[total_num_units]"
+                          dataType="i8"
+                          lineageId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Outputs[Output aggregazione 1].Columns[total_num_units]"
+                          name="total_num_units">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                              name="AggregationColumnId">#{Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB].Columns[num_units]}</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di aggregazione."
+                              name="AggregationType"
+                              typeConverter="AggregationType">4</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                              name="IsBig">1</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni per il confronto di stringhe."
+                              name="AggregationComparisonFlags">0</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\For every police beat, compute\number_vehicles\Unione input multipli"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Unione input multipli;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+                  description="Combina righe di più flussi di dati senza ordinarle. Ad esempio, aggiungere nuovamente le righe al flusso di dati dopo avere corretto gli errori. Se l'ordinamento è importante, è consigliabile utilizzare la trasformazione Unione."
+                  name="Unione input multipli"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Unione input multipli Input 1]"
+                      name="Unione input multipli Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[beat_of_occurrence]"
+                          cachedDataType="i4"
+                          cachedName="beat_of_occurrence"
+                          lineageId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Outputs[Output aggregazione 1].Columns[beat_of_occurrence]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="ID derivazione colonna output"
+                              name="OutputColumnLineageID">#{Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[beat_of_occurrence]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[total_num_units]"
+                          cachedDataType="i8"
+                          cachedName="total_num_units"
+                          lineageId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Outputs[Output aggregazione 1].Columns[total_num_units]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="ID derivazione colonna output"
+                              name="OutputColumnLineageID">#{Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[total_num_units]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[crash_season]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="crash_season"
+                          lineageId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output colonna derivata].Columns[crash_season]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="ID derivazione colonna output"
+                              name="OutputColumnLineageID">#{Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[crash_season]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Input unione input multipli 1]"
+                      hasSideEffects="true"
+                      name="Input unione input multipli 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Input unione input multipli 1].Columns[beat_of_occurrence]"
+                          cachedDataType="i4"
+                          cachedName="beat_of_occurrence"
+                          lineageId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Outputs[Output aggregazione 1].Columns[beat_of_occurrence]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="ID derivazione colonna output"
+                              name="OutputColumnLineageID">#{Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[beat_of_occurrence]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Input unione input multipli 1].Columns[total_num_units]"
+                          cachedDataType="i8"
+                          cachedName="total_num_units"
+                          lineageId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Outputs[Output aggregazione 1].Columns[total_num_units]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="ID derivazione colonna output"
+                              name="OutputColumnLineageID">#{Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[total_num_units]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Input unione input multipli 1].Columns[crash_season]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="crash_season"
+                          lineageId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output colonna derivata].Columns[crash_season]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="ID derivazione colonna output"
+                              name="OutputColumnLineageID">#{Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[crash_season]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Input unione input multipli 2]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Input unione input multipli 2">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1]"
+                      name="Unione input multipli Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[beat_of_occurrence]"
+                          dataType="i4"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[beat_of_occurrence]"
+                          name="beat_of_occurrence" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[total_num_units]"
+                          dataType="i8"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[total_num_units]"
+                          name="total_num_units" />
+                        <outputColumn
+                          refId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[crash_season]"
+                          dataType="wstr"
+                          length="13"
+                          lineageId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[crash_season]"
+                          name="crash_season" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Output aggregazione 1]"
+                  endId="Package\For every police beat, compute\number_vehicles\crash_season_1.Inputs[Input colonna derivata]"
+                  name="Output aggregazione 1"
+                  startId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Outputs[Output aggregazione 1]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Output aggregazione 11]"
+                  endId="Package\For every police beat, compute\number_vehicles\crash_season_2.Inputs[Input colonna derivata]"
+                  name="Output aggregazione 1"
+                  startId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Outputs[Output aggregazione 1]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Output colonna derivata]"
+                  endId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Unione input multipli Input 1]"
+                  name="Output colonna derivata"
+                  startId="Package\For every police beat, compute\number_vehicles\crash_season_1.Outputs[Output colonna derivata]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Output colonna derivata1]"
+                  endId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Inputs[Input unione input multipli 1]"
+                  name="Output colonna derivata"
+                  startId="Package\For every police beat, compute\number_vehicles\crash_season_2.Outputs[Output colonna derivata]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Output corrispondenza ricerca]"
+                  endId="Package\For every police beat, compute\number_vehicles\Date.Inputs[Input ricerca]"
+                  name="Output corrispondenza ricerca"
+                  startId="Package\For every police beat, compute\number_vehicles\Location.Outputs[Output corrispondenza ricerca]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Output corrispondenza ricerca1]"
+                  endId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Inputs[Input suddivisione condizionale]"
+                  name="Output corrispondenza ricerca"
+                  startId="Package\For every police beat, compute\number_vehicles\Date.Outputs[Output corrispondenza ricerca]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Output ordinamento]"
+                  endId="Package\For every police beat, compute\number_vehicles\output_assignment_9b.Inputs[Input destinazione file flat]"
+                  name="Output ordinamento"
+                  startId="Package\For every police beat, compute\number_vehicles\Ordinamento.Outputs[Output ordinamento]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Output origine OLE DB]"
+                  endId="Package\For every police beat, compute\number_vehicles\Location.Inputs[Input ricerca]"
+                  name="Output origine OLE DB"
+                  startId="Package\For every police beat, compute\number_vehicles\Damage.Outputs[Output origine OLE DB]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Summer_Spring]"
+                  endId="Package\For every police beat, compute\number_vehicles\total_num_units_1.Inputs[Input aggregazione 1]"
+                  name="Summer_Spring"
+                  startId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Outputs[Summer_Spring]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Unione input multipli Output 1]"
+                  endId="Package\For every police beat, compute\number_vehicles\Ordinamento.Inputs[Input ordinamento]"
+                  name="Unione input multipli Output 1"
+                  startId="Package\For every police beat, compute\number_vehicles\Unione input multipli.Outputs[Unione input multipli Output 1]" />
+                <path
+                  refId="Package\For every police beat, compute\number_vehicles.Paths[Winter_Autumn]"
+                  endId="Package\For every police beat, compute\number_vehicles\total_num_units_2.Inputs[Input aggregazione 1]"
+                  name="Winter_Autumn"
+                  startId="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale.Outputs[Winter_Autumn]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\For every police beat, compute\number_vehicles"
+          TopLeft="30,36" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="222,133"
+          Size="222,176"
+          Id="Package\For every police beat, compute"
+          TopLeft="36,25" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\For every police beat, compute\number_vehicles">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\For every police beat, compute\number_vehicles\total_num_units_1"
+          TopLeft="442.493506493507,231.545454545455" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\For every police beat, compute\number_vehicles\Location"
+          TopLeft="147.857142857142,208.818181818181" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\For every police beat, compute\number_vehicles\crash_season_2"
+          TopLeft="634.857142857143,29.2467532467532" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\For every police beat, compute\number_vehicles\Suddivisione condizionale"
+          TopLeft="299.428571428572,126.38961038961" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\For every police beat, compute\number_vehicles\output_assignment_9b"
+          TopLeft="1087.42857142857,134.675324675325" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\For every police beat, compute\number_vehicles\total_num_units_2"
+          TopLeft="439.402597402597,28" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\For every police beat, compute\number_vehicles\Date"
+          TopLeft="176.857142857143,43.8181818181818" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\For every police beat, compute\number_vehicles\Ordinamento"
+          TopLeft="924.285714285714,132.675324675325" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\For every police beat, compute\number_vehicles\Unione input multipli"
+          TopLeft="721.857142857143,131.246753246753" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\For every police beat, compute\number_vehicles\Damage"
+          TopLeft="26.5714285714286,129.818181818181" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\For every police beat, compute\number_vehicles\crash_season_1"
+          TopLeft="636.857142857143,232.246753246753" />
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Output corrispondenza ricerca1]"
+          TopLeft="242.857142857143,85.8181818181818">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.904761904762,40.5714285714282"
+              Start="0,0"
+              End="123.904761904762,33.0714285714282">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4767916100212" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4767916100212"
+                    Point2="0,20.4767916100212"
+                    Point3="4,20.4767916100212" />
+                  <mssgle:LineSegment
+                    End="119.904761904762,20.4767916100212" />
+                  <mssgle:CubicBezierSegment
+                    Point1="119.904761904762,20.4767916100212"
+                    Point2="123.904761904762,20.4767916100212"
+                    Point3="123.904761904762,24.4767916100212" />
+                  <mssgle:LineSegment
+                    End="123.904761904762,33.0714285714282" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.83349795386911,25.4767916100212,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Output corrispondenza ricerca]"
+          TopLeft="225.190476190476,208.818181818181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.3333333333323,-123"
+              Start="0,0"
+              End="-13.3333333333323,-115.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-57.330770475882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-57.330770475882"
+                    Point2="0,-61.330770475882"
+                    Point3="-4,-61.330770475882" />
+                  <mssgle:LineSegment
+                    End="-9.33333333333229,-61.330770475882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.33333333333229,-61.330770475882"
+                    Point2="-13.3333333333323,-61.330770475882"
+                    Point3="-13.3333333333323,-65.330770475882" />
+                  <mssgle:LineSegment
+                    End="-13.3333333333323,-115.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.4525455729161,-56.330770475882,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Output colonna derivata1]"
+          TopLeft="711.857142857143,71.2467532467532">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98,60"
+              Start="0,0"
+              End="98,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="94,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94,30"
+                    Point2="98,30"
+                    Point3="98,34" />
+                  <mssgle:LineSegment
+                    End="98,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Output colonna derivata]"
+          TopLeft="713.857142857143,232.246753246753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96,-59"
+              Start="0,0"
+              End="96,-51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-25.5"
+                    Point2="0,-29.5"
+                    Point3="4,-29.5" />
+                  <mssgle:LineSegment
+                    End="92,-29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92,-29.5"
+                    Point2="96,-29.5"
+                    Point3="96,-33.5" />
+                  <mssgle:LineSegment
+                    End="96,-51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Output aggregazione 11]"
+          TopLeft="606.402597402597,49.6233766233766">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.4545454545458,0"
+              Start="0,0"
+              End="20.9545454545458,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.9545454545458,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Output aggregazione 1]"
+          TopLeft="609.493506493507,252.896103896104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.3636363636359,0"
+              Start="0,0"
+              End="19.8636363636359,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="19.8636363636359,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Winter_Autumn]"
+          TopLeft="430.095238095238,126.38961038961">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.8073593073584,-56.3896103896099"
+              Start="0,0"
+              End="92.8073593073584,-48.8896103896099">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.8270567108241" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.8270567108241"
+                    Point2="0,-22.8270567108241"
+                    Point3="4,-22.8270567108241" />
+                  <mssgle:LineSegment
+                    End="88.8073593073584,-22.8270567108241" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.8073593073584,-22.8270567108241"
+                    Point2="92.8073593073584,-22.8270567108241"
+                    Point3="92.8073593073584,-26.8270567108241" />
+                  <mssgle:LineSegment
+                    End="92.8073593073584,-48.8896103896099" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.2665702786792,-17.8270567108241,70.27421875,10.7841796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Unione input multipli Output 1]"
+          TopLeft="897.857142857143,152.961038961039">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.4285714285716,0"
+              Start="0,0"
+              End="18.9285714285716,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.9285714285716,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Summer_Spring]"
+          TopLeft="398.428571428572,168.38961038961">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.564935064935,63.1558441558448"
+              Start="0,0"
+              End="127.564935064935,55.6558441558448">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5779220779224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5779220779224"
+                    Point2="0,31.5779220779224"
+                    Point3="4,31.5779220779224" />
+                  <mssgle:LineSegment
+                    End="123.564935064935,31.5779220779224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.564935064935,31.5779220779224"
+                    Point2="127.564935064935,31.5779220779224"
+                    Point3="127.564935064935,35.5779220779224" />
+                  <mssgle:LineSegment
+                    End="127.564935064935,55.6558441558448" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="28.1188151887175,36.5779220779224,71.3273046875,11.4677734375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Output origine OLE DB]"
+          TopLeft="85.5714285714286,171.818181818181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.95238095238,37"
+              Start="0,0"
+              End="102.95238095238,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9030100334448" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9030100334448"
+                    Point2="0,21.9030100334448"
+                    Point3="4,21.9030100334448" />
+                  <mssgle:LineSegment
+                    End="98.9523809523803,21.9030100334448" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98.9523809523803,21.9030100334448"
+                    Point2="102.95238095238,21.9030100334448"
+                    Point3="102.95238095238,25.9030100334448" />
+                  <mssgle:LineSegment
+                    End="102.95238095238,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For every police beat, compute\number_vehicles.Paths[Output ordinamento]"
+          TopLeft="1064.28571428571,154.675324675325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.1428571428573,0"
+              Start="0,0"
+              End="15.6428571428573,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="15.6428571428573,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\For every police beat, compute\number_vehicles\Location">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_ID_20].[location]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For every police beat, compute\number_vehicles\Date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_ID_20].[date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For every police beat, compute\number_vehicles\Damage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

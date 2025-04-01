@@ -1,0 +1,1303 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/15/2024 6:32:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MSI"
+  DTS:CreatorName="MSI\arcan"
+  DTS:DTSID="{E4D31992-58E7-4D47-931B-8544B5153AEE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="assignment_6b"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{7EF89992-EE90-48E2-B8CD-2D4C58E5090F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7BB867A9-BF5B-45DC-99BE-D419DE59065B}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\arcan\Desktop\dss\Group_ID_20_Part_1\SSIS\output_assignments\output_assignment_6b.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="damage_cost"
+              DTS:DTSID="{C6367BA0-DD73-4644-B52F-D05E1172858C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="vehicle_type"
+              DTS:DTSID="{C4A852A1-E2A8-4027-9D49-A04C753EAEA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{A1A55711-A464-43B3-8568-352A9702B14C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state"
+              DTS:DTSID="{46F5B914-FC11-4B4F-9A4A-118C98716F74}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sex"
+              DTS:DTSID="{A46ED75A-F161-4FC2-AD10-17EA17586D3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{2DA34500-5927-4E12-B8BE-EE730428E98D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3EDC14D3-6F9E-4674-B3C5-A089A4222F49}"
+      DTS:ObjectName="lds.di.unipi.it.Group_ID_20_DB.Group_ID_20">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=lds.di.unipi.it;User ID=Group_ID_20;Initial Catalog=Group_ID_20_DB;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-assignment_6b-{3EDC14D3-6F9E-4674-B3C5-A089A4222F49}lds.di.unipi.it.Group_ID_20_DB.Group_ID_20;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdMtju0ns20icqJPW6nAnXAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACA4K1iN5k+NeL0/DQ5B05wIb7HZYD6ahi67BeNjrIrLAAAAAAOgAAAAAIAACAAAACX9B60CABo51VJakgxot/3o9Oun3Zg0NtxP6BBcAga/CAAAABMqA1Fjg0eVwrQoixTYIXSoVdbLxFjmmZyR1mVtNeeB0AAAACku19+e5zrR6o5Yt9bYOkBa0gcffW4pZljC0/wMcmlz5rMadEDiRZyUPNuHRlu66OV5D/9mVbFoERrFxRrXyJn</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Show all participants ordered by the total damage costs for every vehicle type"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Show all participants ordered by the total damage costs for every vehicle type."
+      DTS:DTSID="{9878805C-F6FC-417F-A351-FBEFB27B67CE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Show all participants ordered by the total damage costs for every vehicle type">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Attività Flusso di dati"
+          DTS:DTSID="{3DCC2290-9D8D-46A3-8671-E0DC1E7B452A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="show_partecipants"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+                  description="Origine OLE DB"
+                  name="Damage"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset">[Group_ID_20].[damage]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variabile che contiene il comando SQL da eseguire."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Mapping tra i parametri nel comando SQL e le variabili."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB]"
+                      name="Output origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[damage_cost]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[damage_cost]"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[damage_cost]"
+                          name="damage_cost"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[crash_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[crash_id]"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[crash_id]"
+                          name="crash_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[date_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[date_id]"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[date_id]"
+                          name="date_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[location_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[location_id]"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[location_id]"
+                          name="location_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[injury_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[injury_id]"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[injury_id]"
+                          name="injury_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[person_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[person_id]"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[person_id]"
+                          name="person_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[vehicle_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[vehicle_id]"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[vehicle_id]"
+                          name="vehicle_id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[damage_cost]"
+                          dataType="r8"
+                          name="damage_cost" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[num_units]"
+                          dataType="i4"
+                          name="num_units" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[crash_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="crash_id" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[date_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="date_id" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[location_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="location_id" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[injury_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="injury_id" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[person_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="person_id" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].ExternalColumns[vehicle_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="vehicle_id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB]"
+                      isErrorOut="true"
+                      name="Output errori origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[damage_cost]"
+                          dataType="r8"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[damage_cost]"
+                          name="damage_cost" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[crash_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[crash_id]"
+                          name="crash_id" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[date_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[date_id]"
+                          name="date_id" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[location_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[location_id]"
+                          name="location_id" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[injury_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[injury_id]"
+                          name="injury_id" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[person_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[person_id]"
+                          name="person_id" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[vehicle_id]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[vehicle_id]"
+                          name="vehicle_id" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+                  description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
+                  name="Ordinamento"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se la trasformazione Ordinamento rimuove le righe con valori di ordinamento duplicati."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero massimo di thread da utilizzare per l'ordinamento."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Inputs[Input ordinamento]"
+                      name="Input ordinamento">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Inputs[Input ordinamento].Columns[damage_cost]"
+                          cachedDataType="r8"
+                          cachedName="damage_cost"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[damage_cost]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di ordinamento della colonna."
+                              name="NewSortKeyPosition">-1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Inputs[Input ordinamento].Columns[vehicle_type]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="vehicle_type"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output corrispondenza ricerca].Columns[vehicle_type]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di ordinamento della colonna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Inputs[Input ordinamento].Columns[city]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="city"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[city]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di ordinamento della colonna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Inputs[Input ordinamento].Columns[state]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="state"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[state]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di ordinamento della colonna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Inputs[Input ordinamento].Columns[sex]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="sex"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[sex]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di ordinamento della colonna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Inputs[Input ordinamento].Columns[age]"
+                          cachedDataType="i4"
+                          cachedName="age"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[age]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifica il tipo di ordinamento della colonna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento]"
+                      isSorted="true"
+                      name="Output ordinamento">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[damage_cost]"
+                          dataType="r8"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[damage_cost]"
+                          name="damage_cost"
+                          sortKeyPosition="-1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                              name="SortColumnId">#{Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[damage_cost]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[vehicle_type]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[vehicle_type]"
+                          name="vehicle_type">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                              name="SortColumnId">#{Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output corrispondenza ricerca].Columns[vehicle_type]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[city]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[city]"
+                          name="city">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                              name="SortColumnId">#{Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[city]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[state]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[state]"
+                          name="state">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                              name="SortColumnId">#{Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[state]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[sex]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[sex]"
+                          name="sex">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                              name="SortColumnId">#{Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[sex]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[age]"
+                          dataType="i4"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[age]"
+                          name="age">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                              name="SortColumnId">#{Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[age]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+                  description="Destinazione file flat"
+                  localeId="1033"
+                  name="output_assignment_6b"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat]"
+                      hasSideEffects="true"
+                      name="Input destinazione file flat">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].Columns[damage_cost]"
+                          cachedDataType="r8"
+                          cachedName="damage_cost"
+                          cachedSortKeyPosition="-1"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[damage_cost]"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[damage_cost]" />
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].Columns[vehicle_type]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="vehicle_type"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[vehicle_type]"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[vehicle_type]" />
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].Columns[city]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="city"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[city]"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[city]" />
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].Columns[state]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="state"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[state]"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[state]" />
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].Columns[sex]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="sex"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[sex]"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[sex]" />
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].Columns[age]"
+                          cachedDataType="i4"
+                          cachedName="age"
+                          externalMetadataColumnId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[age]"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento].Columns[age]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[damage_cost]"
+                          dataType="r8"
+                          name="damage_cost" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[vehicle_type]"
+                          dataType="wstr"
+                          length="50"
+                          name="vehicle_type" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[city]"
+                          dataType="wstr"
+                          length="100"
+                          name="city" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[state]"
+                          dataType="wstr"
+                          length="2"
+                          name="state" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[sex]"
+                          dataType="wstr"
+                          length="1"
+                          name="sex" />
+                        <externalMetadataColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat].ExternalColumns[age]"
+                          dataType="i4"
+                          name="age" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+                  description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+                  name="Person"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Group_ID_20].[person]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Group_ID_20].[person]) [refTable]
+where [refTable].[person_id] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di cache della tabella di ricerca."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se fare riferimento ai metadati in un formato XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="person_id" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="person_type" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crash_date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="city" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="state" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sex" dataType="DT_WSTR" length="1" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="age" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="safety_equipment" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="airbag_deployed" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ejection" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="injury_classification" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="driver_action" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="driver_vision" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="physical_condition" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="bac_result" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="damage_category" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                      name="ParameterMap">#{Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[person_id]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Inputs[Input ricerca]"
+                      name="Input ricerca">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Inputs[Input ricerca].Columns[person_id]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="person_id"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[person_id]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                              name="JoinToReferenceColumn">person_id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca]"
+                      errorOrTruncationOperation="Ricerca"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Output corrispondenza ricerca"
+                      synchronousInputId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Inputs[Input ricerca]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[city]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copia colonna"
+                          length="100"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[city]"
+                          name="city"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn">city</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[state]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copia colonna"
+                          length="2"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[state]"
+                          name="state"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn">state</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[sex]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copia colonna"
+                          length="1"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[sex]"
+                          name="sex"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn">sex</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[age]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copia colonna"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca].Columns[age]"
+                          name="age"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn">age</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output nessuna corrispondenza ricerca]"
+                      description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                      exclusionGroup="1"
+                      name="Output nessuna corrispondenza ricerca"
+                      synchronousInputId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Inputs[Input ricerca]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output errori ricerca]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori ricerca"
+                      synchronousInputId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Inputs[Input ricerca]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+                  description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+                  name="Vehicle"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Group_ID_20].[vehicle]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Group_ID_20].[vehicle]) [refTable]
+where [refTable].[vehicle_id] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di cache della tabella di ricerca."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se fare riferimento ai metadati in un formato XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="vehicle_id" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crash_date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="unit_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="unit_type" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="make" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="model" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lic_plate_state" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="vehicle_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="vehicle_defect" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="vehicle_type" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="vehicle_use" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="travel_direction" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="maneuver" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="occupant_cnt" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="first_contact_point" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                      name="ParameterMap">#{Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[vehicle_id]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_20_DB.Group_ID_20]"
+                      description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Inputs[Input ricerca]"
+                      name="Input ricerca">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Inputs[Input ricerca].Columns[vehicle_id]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="vehicle_id"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB].Columns[vehicle_id]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                              name="JoinToReferenceColumn">vehicle_id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output corrispondenza ricerca]"
+                      errorOrTruncationOperation="Ricerca"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Output corrispondenza ricerca"
+                      synchronousInputId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Inputs[Input ricerca]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output corrispondenza ricerca].Columns[vehicle_type]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copia colonna"
+                          length="50"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output corrispondenza ricerca].Columns[vehicle_type]"
+                          name="vehicle_type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn">vehicle_type</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output nessuna corrispondenza ricerca]"
+                      description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                      exclusionGroup="1"
+                      name="Output nessuna corrispondenza ricerca"
+                      synchronousInputId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Inputs[Input ricerca]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output errori ricerca]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori ricerca"
+                      synchronousInputId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Inputs[Input ricerca]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants.Paths[Output corrispondenza ricerca]"
+                  endId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Inputs[Input ricerca]"
+                  name="Output corrispondenza ricerca"
+                  startId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Outputs[Output corrispondenza ricerca]" />
+                <path
+                  refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants.Paths[Output corrispondenza ricerca1]"
+                  endId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Inputs[Input ordinamento]"
+                  name="Output corrispondenza ricerca"
+                  startId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person.Outputs[Output corrispondenza ricerca]" />
+                <path
+                  refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants.Paths[Output ordinamento]"
+                  endId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b.Inputs[Input destinazione file flat]"
+                  name="Output ordinamento"
+                  startId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento.Outputs[Output ordinamento]" />
+                <path
+                  refId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants.Paths[Output origine OLE DB]"
+                  endId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle.Inputs[Input ricerca]"
+                  name="Output origine OLE DB"
+                  startId="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage.Outputs[Output origine OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants"
+          TopLeft="102,12" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="369,81"
+          Size="369,124"
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type"
+          TopLeft="35,24" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="111,42"
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person"
+          TopLeft="602,81" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\output_assignment_6b"
+          TopLeft="294,172" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Ordinamento"
+          TopLeft="588,171" />
+        <NodeLayout
+          Size="112,42"
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle"
+          TopLeft="329,77" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage"
+          TopLeft="128,77" />
+        <EdgeLayout
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants.Paths[Output origine OLE DB]"
+          TopLeft="246,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,0"
+              Start="0,0"
+              End="75.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants.Paths[Output ordinamento]"
+          TopLeft="588,192.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-107,0"
+              Start="0,0"
+              End="-99.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-99.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants.Paths[Output corrispondenza ricerca1]"
+          TopLeft="657.75,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.78587890625,14.4453125,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants.Paths[Output corrispondenza ricerca]"
+          TopLeft="441,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="161,0"
+              Start="0,0"
+              End="153.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="153.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="9.96412109375001,5,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Vehicle">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_ID_20].[vehicle]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Damage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Show all participants ordered by the total damage costs for every vehicle type\show_partecipants\Person">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_ID_20].[person]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
