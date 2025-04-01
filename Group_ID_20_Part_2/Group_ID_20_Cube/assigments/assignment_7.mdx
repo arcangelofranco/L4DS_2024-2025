@@ -1,0 +1,39 @@
+WITH 
+/*
+	We calculate the number of units involved in the accidents that occurred in summer and spring.
+*/
+MEMBER [Measures].[Summer And Spring Number] AS
+	SUM(
+		(
+			[Location].[Gerarchia].CURRENTMEMBER,
+			{[Date].[Crash Season].&[SUMMER], [Date].[Crash Season].&[SPRING]},
+			[Measures].[Num Units]
+		)
+	)
+
+/*
+	We calculate the number of units involved in accidents that occurred in winter and fall.
+*/
+MEMBER [Measures].[Winter And Autumn Number] AS
+	SUM(
+		(
+			[Location].[Gerarchia].CURRENTMEMBER,
+			{[Date].[Crash Season].&[WINTER], [Date].[Crash Season].&[AUTUMN]},
+			[Measures].[Num Units]
+		)
+	)
+
+/*
+	We calculate the accident seasonality index by comparing the number of units
+	involved between warm and cold seasons.
+*/
+MEMBER [Measures].[Seasonality Crash Index] AS
+	[Measures].[Summer And Spring Number] / [Measures].[Winter And Autumn Number]
+
+SELECT 
+	{
+		[Measures].[Seasonality Crash Index]
+	} ON COLUMNS,
+	[Location].[Gerarchia].[Beat Of Occurrence] ON ROWS
+
+FROM [Damage Cube]

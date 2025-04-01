@@ -1,0 +1,42 @@
+/*
+	We select damage cost as the measure for analysis.
+*/
+SELECT 
+	{
+		[Measures].[Damage Cost]
+	} ON COLUMNS,
+
+/*
+	We generate a set of non-empty rows by combining the vehicle type and year of the accident
+	from the “Damage Cube.” For each combination, we select the most relevant member
+	based on damage cost.
+*/
+NONEMPTY(
+	GENERATE(
+		(
+			[Vehicle].[Vehicle Type].[Vehicle Type], 
+			[Date].[Gerarchia].[Crash Year]
+		),
+		TOPCOUNT(
+			(	
+				/*
+					We define a combination of dimensions, including vehicle type,
+					year of the accident, city, state, gender, and age group of the person involved.
+				*/
+				[Vehicle].[Vehicle Type].CURRENTMEMBER,
+				[Date].[Gerarchia].CURRENTMEMBER,
+				[Person].[Gerarchia].[City],
+				[Person].[State].[State],
+				[Person].[Sex].[Sex],
+				[Person].[Age].[Age]
+			), 
+			1, 
+			/*
+				We order the combinations by damage cost and select the highest.
+			*/
+			[Measures].[Damage Cost]
+		)
+	)
+) ON ROWS
+
+FROM [Damage Cube]

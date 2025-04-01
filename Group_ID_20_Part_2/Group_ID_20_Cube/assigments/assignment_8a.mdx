@@ -1,0 +1,163 @@
+WITH 
+/*
+	We calculate the weight for primary causes as the maximum number of accidents
+	associated with each primary cause, multiplying by 2.
+*/
+MEMBER [Measures].[Prim Cause Weight] AS 
+    MAX(
+        [Crash].[Prim Contributory Cause].[Prim Contributory Cause], 
+        [Measures].[Num Crashes]
+    ) * 2
+
+/*
+	We calculate the weight for secondary causes using the maximum of the 
+	number of accidents for each secondary cause.
+*/
+MEMBER [Measures].[Sec Cause Weight] AS 
+    MAX(
+        [Crash].[Sec Contributory Cause].[Sec Contributory Cause], 
+        [Measures].[Num Crashes]
+    )
+
+/*
+	We determine whether the most frequent type of cause is primary or secondary,
+	by comparing the values of the [Prim Cause Weight] or [Sec Cause Weight] measures.
+*/
+MEMBER [Measures].[Freq Cause Type] AS 
+    IIF(
+        [Measures].[Prim Cause Weight] > [Measures].[Sec Cause Weight], 
+        "Primary", 
+        "Secondary"
+    )
+
+/*
+	We identify the name of the most frequent primary cause using “TOPCOUNT”,
+	selecting the primary cause with the highest number of incidents.
+*/
+MEMBER [Measures].[Freq Prim Cause] AS 
+    TOPCOUNT(
+        [Crash].[Prim Contributory Cause].[Prim Contributory Cause], 
+        1, 
+        [Measures].[Num Crashes]
+    ).ITEM(0).NAME
+
+/*
+	We identify the name of the most frequent secondary cause using “TOPCOUNT”,
+	selecting the secondary cause with the highest number of incidents.
+*/
+MEMBER [Measures].[Freq Sec Cause] AS 
+    TOPCOUNT(
+        [Crash].[Sec Contributory Cause].[Sec Contributory Cause], 
+        1, 
+        [Measures].[Num Crashes]
+    ).ITEM(0).NAME
+
+/*
+	We determine which is the most frequent cause overall between primary 
+	and secondary by comparing their respective weights.
+*/
+MEMBER [Measures].[Most Freq Cause] AS 
+    IIF(
+        [Measures].[Prim Cause Weight] > [Measures].[Sec Cause Weight], 
+        [Measures].[Freq Prim Cause], 
+        [Measures].[Freq Sec Cause]
+    )
+
+/*
+	We calculate the total damage cost associated with the most frequent cause,
+	“FILTER” is used to select the members corresponding to the most frequent cause
+	and “SUM” to sum the damage costs related to that cause.
+*/
+MEMBER [Measures].[Most Freq Cause Damage] AS 
+    IIF(
+        [Measures].[Prim Cause Weight] > [Measures].[Sec Cause Weight],
+        SUM(
+            FILTER(
+                [Crash].[Prim Contributory Cause].[Prim Contributory Cause].MEMBERS,
+                [Crash].[Prim Contributory Cause].CURRENTMEMBER.NAME = [Measures].[Freq Prim Cause]
+            ),
+            [Measures].[Damage Cost]
+        ),
+        SUM(
+            FILTER(
+                [Crash].[Sec Contributory Cause].[Sec Contributory Cause].MEMBERS,
+                [Crash].[Sec Contributory Cause].CURRENTMEMBER.NAME = [Measures].[Freq Sec Cause]
+            ),
+            [Measures].[Damage Cost]
+        )
+    )
+
+/*
+	We extend the weighting of primary causes to a higher level in the hierarchy
+	of the “Date” dimension.
+*/
+MEMBER [Measures].[Overall Prim Cause Weight] AS 
+    MAX(
+        ([Crash].[Prim Contributory Cause].[Prim Contributory Cause], [Date].[Gerarchia].PARENT), 
+        [Measures].[Num Crashes]
+    ) * 2
+
+/*
+	We extend the weighing of secondary causes to a higher level in the hierarchy
+	of the “Date” dimension.
+*/
+MEMBER [Measures].[Overall Sec Cause Weight] AS 
+    MAX(
+        ([Crash].[Sec Contributory Cause].[Sec Contributory Cause], [Date].[Gerarchia].PARENT), 
+        [Measures].[Num Crashes]
+    )
+
+/*
+	We determine whether, overall, the most frequent type of cause is primary or secondary.
+*/
+MEMBER [Measures].[Overall Freq Cause Type] AS 
+    IIF(
+        [Measures].[Overall Prim Cause Weight] > [Measures].[Overall Sec Cause Weight], 
+        "Primary", 
+        "Secondary"
+    )
+
+/*
+	We identify the name of the most frequent overall primary cause
+	based on “Date.”
+*/
+MEMBER [Measures].[Overall Freq Prim Cause] AS 
+    TOPCOUNT(
+        ([Crash].[Prim Contributory Cause].[Prim Contributory Cause], [Date].[Gerarchia].PARENT), 
+        1, 
+        [Measures].[Num Crashes]
+    ).ITEM(0).ITEM(0).NAME
+
+/*
+	We identify the name of the most frequent overall secondary cause
+	based on “Date.”
+*/
+MEMBER [Measures].[Overall Freq Sec Cause] AS 
+    TOPCOUNT(
+        ([Crash].[Sec Contributory Cause].[Sec Contributory Cause], [Date].[Gerarchia].PARENT), 
+        1, 
+        [Measures].[Num Crashes]
+    ).ITEM(0).ITEM(0).NAME
+
+/*
+	We determine the most frequent overall cause by comparing the weights.
+*/
+MEMBER [Measures].[Overall Most Freq Cause] AS 
+    IIF(
+        [Measures].[Overall Prim Cause Weight] > [Measures].[Overall Sec Cause Weight], 
+        [Measures].[Overall Freq Prim Cause], 
+        [Measures].[Overall Freq Sec Cause]
+    )
+
+
+SELECT 
+    {
+        [Measures].[Prim Cause Weight],
+        [Measures].[Sec Cause Weight],
+        [Measures].[Freq Cause Type],
+        [Measures].[Most Freq Cause],
+        [Measures].[Most Freq Cause Damage],
+        [Measures].[Overall Most Freq Cause]
+    } ON COLUMNS,
+    [Date].[Gerarchia].[Crash Year] ON ROWS
+FROM [Damage Cube]

@@ -1,0 +1,40 @@
+WITH
+/*
+	We calculate the damage cost for the current year using the current member of the date hierarchy.
+*/
+MEMBER [Measures].[Year Per Damage Cost] AS
+	([Date].[Gerarchia].CURRENTMEMBER, [Measures].[Damage Cost])
+
+/*
+	We calculate the damage cost for the previous year by accessing the previous member in the date hierarchy.
+*/
+MEMBER [Measures].[Previous Year Per Damage Cost] AS
+	([Date].[Gerarchia].CURRENTMEMBER.LAG(1), [Measures].[Damage Cost])
+
+/*
+	We calculate the percentage change in damage cost from the previous year.
+	If there is no data for the previous year, we return 0.
+*/
+MEMBER [Measures].[Damage Cost Change] AS
+	IIF(
+		ISEMPTY([Measures].[Previous Year Per Damage Cost]), 
+		0,
+		(([Measures].[Year Per Damage Cost] - [Measures].[Previous Year Per Damage Cost]) / [Measures].[Previous Year Per Damage Cost]) * 100
+	),
+	FORMAT_STRING = "Percent"
+
+SELECT
+	{
+		[Measures].[Damage Cost Change]
+	} ON COLUMNS,
+
+/*
+	We filter the rows to show only geographic points and accident years
+	Where the change in damage cost is non-zero.
+*/
+	FILTER(
+		NONEMPTY(([Location].[Gerarchia].[Location Point].MEMBERS, [Date].[Gerarchia].[Crash Year].MEMBERS)),
+		[Measures].[Damage Cost Change] <> 0
+	) ON ROWS
+
+FROM [Damage Cube]

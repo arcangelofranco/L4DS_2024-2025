@@ -1,0 +1,26 @@
+WITH
+/*
+	We calculate the grand total of damage at the level of two levels higher in the date hierarchy.
+*/
+MEMBER [Measures].[Grand Total] AS
+    ([Date].[Gerarchia].CURRENTMEMBER.PARENT.PARENT, [Measures].[Damage Cost])
+
+SELECT 
+	{
+		[Measures].[Damage Cost], [Measures].[Grand Total]
+	} ON COLUMNS, 
+
+/*
+	We generate rows by combining the year of the accident, the month as a string, and the geographic point.
+	We filter to keep only combinations that have a non-empty value for “Damage Cost”.
+*/
+	NONEMPTY(
+		CROSSJOIN(
+			[Date].[Gerarchia].[Crash Year].MEMBERS, 
+			[Date].[Crash Month String].[Crash Month String].MEMBERS, 
+			[Location].[Gerarchia].[Location Point].MEMBERS
+		), 
+		[Measures].[Damage Cost]
+	) ON ROWS 
+
+FROM [Damage Cube]

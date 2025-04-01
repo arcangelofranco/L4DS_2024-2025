@@ -1,0 +1,496 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="55a0e494-937b-41f3-8568-a3efbc228159" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Crash</ID>
+  <Name>Crash</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-943" scrolltop="-3659" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9165" y="12319" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="crash" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4382" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00001e11000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Group_ID_20_crash" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-943</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3659</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="203">
+            <Shape Id="Crash Id" Expanded="false">
+              <Attributes>
+                <Attribute Id="Crash Id" />
+                <Attribute Id="Alignment" />
+                <Attribute Id="Crash Date" />
+                <Attribute Id="Crash Type" />
+                <Attribute Id="Device Condition" />
+                <Attribute Id="First Crash Type" />
+                <Attribute Id="Lighting Condition" />
+                <Attribute Id="Posted Speed Limit" />
+                <Attribute Id="Rd No" />
+                <Attribute Id="Report Type" />
+                <Attribute Id="Road Defect" />
+                <Attribute Id="Roadway Surface Cond" />
+                <Attribute Id="Traffic Control Device" />
+                <Attribute Id="Trafficway Type" />
+                <Attribute Id="Weather Condition" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Sec Contributory Cause" Expanded="false">
+              <Attributes>
+                <Attribute Id="Sec Contributory Cause" />
+              </Attributes>
+              <Position x="278" y="20" />
+            </Shape>
+            <Shape Id="Prim Contributory Cause" Expanded="false">
+              <Attributes>
+                <Attribute Id="Prim Contributory Cause" />
+              </Attributes>
+              <Position x="278" y="69" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="61b9a7b6-c48e-4cbf-b246-c0f641157a22">
+    <DataSourceViewID>Group ID 20 DB</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="af7d6b55-d0ef-4b88-acf3-a5a8d297867c">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="fc3fa14f-5010-41de-8720-d37b44ba1298">
+      <ID>Crash Id</ID>
+      <Name>Crash Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fed4bcc8-e0de-4e28-93d3-bbe67a939768">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="252a4eeb-fa8d-43c1-bc8c-2216faceba27">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>crash_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="b60f27c1-76af-4a79-8d9d-6b030c0b99c4">
+          <AttributeID>Rd No</AttributeID>
+          <Name>Rd No</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="371262b8-4ae1-44a9-85f3-3831ee1941fb">
+          <AttributeID>Crash Date</AttributeID>
+          <Name>Crash Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="10143939-223d-47d8-a827-a9c9468d1e24">
+          <AttributeID>Posted Speed Limit</AttributeID>
+          <Name>Posted Speed Limit</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8a9ee061-c4aa-47b3-bb93-2de0c60e897e">
+          <AttributeID>Traffic Control Device</AttributeID>
+          <Name>Traffic Control Device</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4016f60c-19ac-474b-899c-a21095297384">
+          <AttributeID>Device Condition</AttributeID>
+          <Name>Device Condition</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="386e9f59-afe2-47dd-910a-8080ea1fb28d">
+          <AttributeID>Weather Condition</AttributeID>
+          <Name>Weather Condition</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6d75639f-337e-4593-9441-f2ef155234d0">
+          <AttributeID>Lighting Condition</AttributeID>
+          <Name>Lighting Condition</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="55839f0a-f35c-4d3d-885c-f3c5c780c213">
+          <AttributeID>First Crash Type</AttributeID>
+          <Name>First Crash Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9b56d2da-fccd-4acb-ab47-17175b0898ac">
+          <AttributeID>Trafficway Type</AttributeID>
+          <Name>Trafficway Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f2794ee4-3e47-4a5a-a0b5-250af5a8aa67">
+          <AttributeID>Alignment</AttributeID>
+          <Name>Alignment</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0f0a08da-3d70-4af8-89d6-324c44d96d28">
+          <AttributeID>Roadway Surface Cond</AttributeID>
+          <Name>Roadway Surface Cond</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f29a51e2-03f1-422e-ba75-ae37a57cab8f">
+          <AttributeID>Road Defect</AttributeID>
+          <Name>Road Defect</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b9ee1ed8-1019-4c95-8630-7d48cb0ad0d0">
+          <AttributeID>Report Type</AttributeID>
+          <Name>Report Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5ef2e14f-c5c1-466c-9dc3-5df8f6a3008e">
+          <AttributeID>Crash Type</AttributeID>
+          <Name>Crash Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f5a160c4-c94b-4e6b-a8d7-0203eb8e4e8d">
+          <AttributeID>Prim Contributory Cause</AttributeID>
+          <Name>Prim Contributory Cause</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2889cb6b-94e1-4c7d-912c-06dd7d4d7dcb">
+          <AttributeID>Sec Contributory Cause</AttributeID>
+          <Name>Sec Contributory Cause</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7236c24a-9bbd-4bc7-bf6e-b92cd17a3de4">
+      <ID>Rd No</ID>
+      <Name>Rd No</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7b24220b-e9d2-4587-852b-d760644a05e3">
+          <DataType>WChar</DataType>
+          <DataSize>8</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5a2f4e86-0a94-482d-8f5f-a3b84883e7a5">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>rd_no</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3537d840-35ef-4238-88d2-ebcd3fd9779e">
+      <ID>Crash Date</ID>
+      <Name>Crash Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2f688f58-79d3-44d4-916d-eee1453d0218">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1abe9cf8-d9b1-4761-939f-ffcf53f906e9">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>crash_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d64099bc-955d-43c8-b164-c54fad286670">
+      <ID>Posted Speed Limit</ID>
+      <Name>Posted Speed Limit</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7ac0bd21-ad10-4033-8ba3-b12fbff3a547">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a9d2129a-84d9-4eee-91c4-a0fa9ca3b399">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>posted_speed_limit</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="76d3c50e-725f-4baa-8251-834cea0069d0">
+      <ID>Traffic Control Device</ID>
+      <Name>Traffic Control Device</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="70d62b2b-c26e-4318-9b7a-edefd06558a7">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="902fae88-7415-4bb9-a1e3-36c4116c18b8">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>traffic_control_device</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3cde97cf-d0e8-4ace-a8f8-d3886db28ccc">
+      <ID>Device Condition</ID>
+      <Name>Device Condition</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6e2c2ef0-002d-4248-b4f8-f75fd99d3629">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="158042a3-34d4-4aef-9fc3-3bfbc1715aa5">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>device_condition</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f83d7d25-9752-4da6-be8d-40451603be2d">
+      <ID>Weather Condition</ID>
+      <Name>Weather Condition</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="db8d9706-29ea-48c7-9546-f6c4278e154e">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8e7f9232-abdf-415e-b45a-fc8b83a5a0e6">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>weather_condition</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0f84ef90-d8a8-4c3b-8257-1a5a0597a2e5">
+      <ID>Lighting Condition</ID>
+      <Name>Lighting Condition</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cbba53c3-43bd-44d2-877f-e2ee6cc5afe5">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="63efddd8-645f-446b-a308-cfbc8b3a410f">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>lighting_condition</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ff90e23b-a25c-43d6-84c2-2d2591466ae5">
+      <ID>First Crash Type</ID>
+      <Name>First Crash Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a93dd799-5664-403f-bfc5-4c20c0777588">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f935081d-662e-4a04-a509-21dcb001f4c2">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>first_crash_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cd72de27-263b-4ad2-8fdf-0569bd43945b">
+      <ID>Trafficway Type</ID>
+      <Name>Trafficway Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cd26ac4a-115c-420c-b53b-b47643f50af0">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9d3f49c9-394f-4a2f-9554-0f9bb6062bbc">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>trafficway_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6ec9d019-fc1b-401b-b493-9c0e4d496bae">
+      <ID>Alignment</ID>
+      <Name>Alignment</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2aa054f3-de0f-4314-bdd2-94b5ff0e3a75">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a0b1aa56-073b-403c-b248-f1acdaf18aab">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>alignment</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f512f5e1-44c5-49e3-8347-2e89ca58ad5a">
+      <ID>Roadway Surface Cond</ID>
+      <Name>Roadway Surface Cond</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="58e44ae3-203e-40e6-875f-448fd983b412">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3eb635c0-a00b-4dc9-b7de-893254b1e961">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>roadway_surface_cond</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="147ebf29-00e0-4498-a3ca-f274feed1978">
+      <ID>Road Defect</ID>
+      <Name>Road Defect</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d99b3db4-bca2-473f-a077-23eb81856a59">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8db75a3f-b127-4170-91c1-0ed32d400afb">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>road_defect</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6ba66022-3398-4484-bc17-2df30522f291">
+      <ID>Report Type</ID>
+      <Name>Report Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ed9fe57f-01b4-45a3-81de-0767e59bd878">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d4eb7dd9-1ce7-4bee-8f10-c5ab9ee4323e">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>report_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8d287873-c4f0-4323-9023-7536cb5ea267">
+      <ID>Crash Type</ID>
+      <Name>Crash Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="47e0c53c-7080-496e-8cd8-d9f7da941285">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="57580a96-664e-4632-94f2-60ce91e92079">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>crash_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b957d284-e592-4a6e-a7bf-82f753abe7c1">
+      <ID>Prim Contributory Cause</ID>
+      <Name>Prim Contributory Cause</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c4c4bf72-d529-4bf6-ac9e-ebe8e5dece0d">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="711fa767-2506-4c99-bdd4-02c771661129">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>prim_contributory_cause</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="aa15e636-8293-4560-a162-735696ac0c6a">
+      <ID>Sec Contributory Cause</ID>
+      <Name>Sec Contributory Cause</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eb3d4184-7e9f-4e83-a587-d6d52658d40c">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5e198dee-b01b-4ca5-804d-32a1e91f8abc">
+            <TableID>Group_ID_20_crash</TableID>
+            <ColumnID>sec_contributory_cause</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="7a9d0098-1d55-43b4-b5f7-4893a4179837">
+      <ID>Gerarchia</ID>
+      <Name>Gerarchia</Name>
+      <Levels>
+        <Level dwd:design-time-name="1f08e85a-94da-4210-8cc0-a6975e3f6a6c">
+          <ID>Prim Contributory Cause</ID>
+          <Name>Prim Contributory Cause</Name>
+          <SourceAttributeID>Prim Contributory Cause</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="edd460f4-2529-4f1e-839f-08d43c608bd2">
+          <ID>Sec Contributory Cause</ID>
+          <Name>Sec Contributory Cause</Name>
+          <SourceAttributeID>Sec Contributory Cause</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
